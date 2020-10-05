@@ -13,18 +13,26 @@ public class MoodAnalyserTest {
 		String actual = MoodAnalyser.analyseMood();
 		assertEquals("SAD",actual);
 	}
-
+        @Test
 	public void happy_test() {
 		MoodAnalyser mood = new MoodAnalyser("Iam in any mood");
 		String expectedMood = "HAPPY";
 		String actual = MoodAnalyser.analyseMood();
 		assertEquals(expectedMood, actual);
 	}
-
+        @Test
 	public void test() {
 		MoodAnalyser moodsAnalyse = new MoodAnalyser("Iam in happy mood");
 		String expectedMood = "HAPPY";
 		String actual = MoodAnalyser.analyseMood();
 		assertEquals(expectedMood, actual);
 	}
+        @Test
+	public void  givenNullMood() {
+		MoodAnalyser mood = new MoodAnalyser(null);
+		String actual = MoodAnalyser.analyseMood();
+		Assert.assertEquals("HAPPY", actual);
+	}
+   }
+
 }
